@@ -5,6 +5,7 @@ public class main {
         Scanner in = new Scanner(System.in);
         String playerA = " ";
         String playerB = " ";
+        String resume = " ";
         boolean playing = true;
         boolean done = false;
 
@@ -50,8 +51,39 @@ public class main {
 
             }while (!done);
 
-            IO.print("test complete");
-            break;
+            /*checking possibilities*/
+
+            if(playerA.equalsIgnoreCase("R") && playerB.equalsIgnoreCase("R")){
+                IO.println("You both chose Rock! Game is a tie!");
+            }else if(playerA.equalsIgnoreCase("P") && playerB.equalsIgnoreCase("P")){
+                IO.println("You both chose Paper! Game is a tie!");
+            }else if(playerA.equalsIgnoreCase("S") && playerB.equalsIgnoreCase("S")){
+                IO.println("You both chose Scissors!  Game is a tie!");
+            }else if(playerA.equalsIgnoreCase("S") && playerB.equalsIgnoreCase("P")){
+                IO.println("Scissors VS Paper! Player A wins!!");
+            }else if(playerA.equalsIgnoreCase("P") && playerB.equalsIgnoreCase("R")){
+                IO.println("Paper VS Rock! Player B wins!!");
+            }else if(playerA.equalsIgnoreCase("P") && playerB.equalsIgnoreCase("S")){
+                IO.println("Paper VS Scissors! Player B wins!!");
+            }else if(playerA.equalsIgnoreCase("P") && playerB.equalsIgnoreCase("S")){
+                IO.println("Scissors VS Paper! Player B wins!!");
+            }else if(playerA.equalsIgnoreCase("R") && playerB.equalsIgnoreCase("S")){
+                IO.println("Rock VS Scissors! Player A wins!!");
+            }else if(playerA.equalsIgnoreCase("R") && playerB.equalsIgnoreCase("s")){
+                IO.println("Rock VS Scissors! Player A wins!!");
+            }else if(playerA.equalsIgnoreCase("R") && playerB.equalsIgnoreCase("P")){
+                IO.println("Rock VS Paper! Player B wins!!");
+            }
+
+            IO.print("Would you like to play again? (Y/N): ");
+            resume = in.nextLine();
+            if (resume.equalsIgnoreCase("Y")) {
+                playing = true;
+            }
+            else {
+                playing = false;
+            }
+
         }while (playing);
 
     }
